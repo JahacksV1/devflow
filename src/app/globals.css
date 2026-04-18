@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0b0c;
+  --foreground: #f8f6f2;
+  --card: #141416;
+  --muted-foreground: #b9b3a7;
+  --border: #2a2a2f;
+  --primary: #f4a23a;
+  --primary-foreground: #16120a;
+  --secondary-info: #8ea4c5;
+  --secondary-info-soft: rgba(142, 164, 197, 0.16);
+  --secondary-trust: #9eab78;
+  --secondary-trust-soft: rgba(158, 171, 120, 0.14);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary-info: var(--secondary-info);
+  --color-secondary-info-soft: var(--secondary-info-soft);
+  --color-secondary-trust: var(--secondary-trust);
+  --color-secondary-trust-soft: var(--secondary-trust-soft);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-padding-bottom: 7rem;
+}
+
+.marquee-track {
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

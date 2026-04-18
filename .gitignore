@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local asset drops; published copies live in /public/media
+/assets/*.mp4

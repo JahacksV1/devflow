@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Devflow (working title)
+
+Client-outreach landing page for local service businesses: Next.js 16, TypeScript, Tailwind. Live demo links and media live in the repo; see `PLAN.md` for scope.
+
+Bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
