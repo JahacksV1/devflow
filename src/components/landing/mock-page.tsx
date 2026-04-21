@@ -34,7 +34,7 @@ export function MockPage({ highlightElement, className }: MockPageProps) {
           getHighlight("call"),
         )}
       >
-        Call now - (916) 555-0192
+        Call now - (510) 306-4137
       </button>
 
       <div className="mt-3 flex gap-2 text-[10px] text-[var(--color-muted-foreground)]">

@@ -1,4 +1,5 @@
-import { Mail, MessageSquareText, Phone, UserCircle2 } from "lucide-react";
+import Image from "next/image";
+import { Mail, MessageSquareText, Phone } from "lucide-react";
 
 import { SectionShell } from "./section-shell";
 
@@ -6,27 +7,38 @@ const CONTACT_ACTIONS = [
   {
     id: "call",
     label: "Call us",
-    value: "(555) 010-0200",
-    href: "tel:+15550100200",
+    value: "(510) 306-4137",
+    href: "tel:+15103064137",
     icon: Phone,
   },
   {
     id: "text",
     label: "Text us",
-    value: "(555) 010-0200",
-    href: "sms:+15550100200?body=Hey%2C%20I%20want%20a%20free%20video%20site%20review.",
+    value: "(510) 306-4137",
+    href: "sms:+15103064137?body=Hey%2C%20I%20want%20a%20free%20video%20site%20review.",
     icon: MessageSquareText,
   },
   {
     id: "email",
     label: "Email us",
-    value: "hello@yourbrand.com",
-    href: "mailto:hello@yourbrand.com?subject=Free%20Video%20Site%20Review",
+    value: "Jahamiel@Servlify.com",
+    href: "mailto:Jahamiel@Servlify.com?subject=Free%20Video%20Site%20Review",
     icon: Mail,
   },
 ] as const;
 
-const FOUNDERS = ["Jahamiel", "Caprise"] as const;
+const FOUNDERS = [
+  {
+    name: "Jahamiel",
+    role: "Founder",
+    photoSrc: "/media/founders/jahamiel.png",
+  },
+  {
+    name: "Caprise",
+    role: "Founder",
+    photoSrc: "/media/founders/caprise.png",
+  },
+] as const;
 
 export function ContactSection() {
   return (
@@ -67,7 +79,7 @@ export function ContactSection() {
                 id="contact-channel"
                 name="contact-channel"
                 type="text"
-                placeholder="(555) 010-0200 or you@example.com"
+                placeholder="Your phone or Jahamiel@Servlify.com"
                 className="h-12 w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-4 text-sm text-[var(--color-foreground)] outline-none ring-[var(--color-primary)] transition focus-visible:ring-2"
               />
             </div>
@@ -101,17 +113,23 @@ export function ContactSection() {
           <p className="mt-2 text-sm leading-6 text-[var(--color-muted-foreground)]">
             We build every site ourselves and handle communication directly from start to launch.
           </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
             {FOUNDERS.map((founder) => (
               <div
-                key={founder}
+                key={founder.name}
                 className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-4"
               >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)]">
-                  <UserCircle2 className="h-7 w-7" aria-hidden />
+                <div className="relative h-24 w-24 overflow-hidden rounded-full border border-[var(--color-border)] bg-[var(--color-card)] sm:h-28 sm:w-28">
+                  <Image
+                    src={founder.photoSrc}
+                    alt={`${founder.name} headshot`}
+                    fill
+                    sizes="(min-width: 640px) 112px, 96px"
+                    className="object-cover object-center"
+                  />
                 </div>
-                <p className="mt-3 text-sm font-semibold text-[var(--color-foreground)]">{founder}</p>
-                <p className="text-xs text-[var(--color-muted-foreground)]">Founder</p>
+                <p className="mt-3 text-sm font-semibold text-[var(--color-foreground)]">{founder.name}</p>
+                <p className="text-xs text-[var(--color-muted-foreground)]">{founder.role}</p>
               </div>
             ))}
           </div>
@@ -137,9 +155,7 @@ export function ContactSection() {
               );
             })}
           </div>
-          <p className="mt-3 text-xs text-[var(--color-muted-foreground)]">
-            Placeholder contact details are shown above for now.
-          </p>
+          <p className="mt-3 text-xs text-[var(--color-muted-foreground)]">Direct business contact details are shown above.</p>
         </article>
       </div>
     </SectionShell>

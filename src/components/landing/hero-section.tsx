@@ -9,6 +9,10 @@ export function HeroSection() {
     >
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.28fr)] lg:items-center lg:gap-12 lg:py-24">
         <div className="space-y-8 lg:max-w-3xl">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-[color:rgba(244,162,58,0.45)] bg-[color:rgba(244,162,58,0.14)] px-3 py-1 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-primary)] shadow-[0_0_0_1px_rgba(244,162,58,0.2)_inset]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]" aria-hidden />
+            Servlify
+          </p>
           <p className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-muted-foreground)]">
             Mobile-first websites for local service businesses
           </p>

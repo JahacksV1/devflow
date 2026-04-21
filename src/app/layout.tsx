@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Modern Websites for Local Service Businesses",
+  title: "Servlify | Modern Websites for Local Service Businesses",
   description:
     "We rebuild outdated service-business websites into modern, mobile-first experiences that convert visitors into calls.",
 };

@@ -4,11 +4,11 @@ import { FAQ_ITEMS } from "@/content/landing";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "[Brand Name]",
+  name: "Servlify",
   description:
     "We rebuild outdated service-business websites into modern, mobile-first experiences that convert visitors into calls.",
   areaServed: "United States",
-  url: "https://example.com",
+  url: "https://servlify.com",
 };
 
 const faqSchema = {
