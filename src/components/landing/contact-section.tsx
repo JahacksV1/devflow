@@ -29,14 +29,22 @@ const CONTACT_ACTIONS = [
 
 const FOUNDERS = [
   {
-    name: "Jahamiel",
+    name: "Jahamiel Douglas",
     role: "Founder",
     photoSrc: "/media/founders/jahamiel.png",
+    photoPosition: "50% 16%",
+    photoScale: 1.75,
+    photoLeft: "0px",
+    photoTop: "0px",
   },
   {
-    name: "Caprise",
+    name: "Caprise Brock",
     role: "Founder",
     photoSrc: "/media/founders/caprise.png",
+    photoPosition: "50% 34%",
+    photoScale: 1.25,
+    photoLeft: "-5px",
+    photoTop: "17px",
   },
 ] as const;
 
@@ -52,7 +60,7 @@ export function ContactSection() {
         <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 sm:p-7">
           <h3 className="text-lg font-semibold tracking-tight">Tell us where your site needs help</h3>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--color-muted-foreground)]">
-            We will send a short video from Jahamiel or Caprise walking through your current website,
+            We will send a short video from Jahamiel Douglas or Caprise Brock walking through your current website,
             what could be losing you calls, and the upgrades we recommend.
           </p>
           <form className="mt-6 grid gap-3 sm:grid-cols-2" aria-label="Request free video review">
@@ -79,7 +87,7 @@ export function ContactSection() {
                 id="contact-channel"
                 name="contact-channel"
                 type="text"
-                placeholder="Your phone or Jahamiel@Servlify.com"
+                placeholder="Your phone or email"
                 className="h-12 w-full rounded-md border border-[var(--color-border)] bg-[var(--color-background)] px-4 text-sm text-[var(--color-foreground)] outline-none ring-[var(--color-primary)] transition focus-visible:ring-2"
               />
             </div>
@@ -119,13 +127,19 @@ export function ContactSection() {
                 key={founder.name}
                 className="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-4"
               >
-                <div className="relative h-24 w-24 overflow-hidden rounded-full border border-[var(--color-border)] bg-[var(--color-card)] sm:h-28 sm:w-28">
+                <div className="relative h-32 w-32 overflow-hidden rounded-full border border-[var(--color-border)] bg-[var(--color-card)] sm:h-36 sm:w-36">
                   <Image
                     src={founder.photoSrc}
                     alt={`${founder.name} headshot`}
                     fill
-                    sizes="(min-width: 640px) 112px, 96px"
-                    className="object-cover object-center"
+                    sizes="(min-width: 640px) 144px, 128px"
+                    className="object-cover"
+                    style={{
+                      objectPosition: founder.photoPosition,
+                      transform: `scale(${founder.photoScale})`,
+                      left: founder.photoLeft,
+                      top: founder.photoTop,
+                    }}
                   />
                 </div>
                 <p className="mt-3 text-sm font-semibold text-[var(--color-foreground)]">{founder.name}</p>
