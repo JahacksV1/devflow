@@ -19,7 +19,7 @@ export function HeroSection() {
               className="max-w-4xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl lg:leading-[1.04]"
             >
               We rebuild outdated service-business websites into modern, mobile-first sites that
-              make it easier for customers to reach you.
+              gets your business more customers calling.
             </h1>
             <p className="max-w-2xl text-pretty text-base leading-7 text-[var(--color-muted-foreground)] sm:text-lg">
               Built for tree service, landscaping, plumbing, and other local businesses
@@ -32,7 +32,7 @@ export function HeroSection() {
               href="#contact"
               className="inline-flex h-12 items-center justify-center rounded-md bg-[var(--color-primary)] px-6 text-sm font-semibold text-[var(--color-primary-foreground)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
             >
-              Get a free mockup of your site
+              Get a free video review
             </a>
             <a
               href="#examples"
@@ -46,12 +46,12 @@ export function HeroSection() {
         <figure className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 shadow-[0_24px_90px_-45px_rgba(255,255,255,0.25)] sm:p-5">
           <div className="relative w-full overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] aspect-video lg:aspect-auto lg:h-[min(34rem,58vh)] lg:min-h-[18rem]">
             <video
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full transform-gpu object-cover"
               autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               poster={HERO_MEDIA.posterSrc}
               aria-label="Short looping screen recording of sample service business website demos"
             >
